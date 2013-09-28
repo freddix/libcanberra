@@ -1,7 +1,7 @@
-Summary:	libcanberra - the portable sound event library
+Summary:	Portable sound event library
 Name:		libcanberra
 Version:	0.30
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://0pointer.de/lennart/projects/libcanberra/%{name}-%{version}.tar.xz
@@ -10,7 +10,7 @@ URL:		http://0pointer.de/lennart/projects/libcanberra/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gstreamer-devel >= 1.0
+BuildRequires:	gstreamer-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	gtk-doc
