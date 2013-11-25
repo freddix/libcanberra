@@ -1,7 +1,7 @@
 Summary:	Portable sound event library
 Name:		libcanberra
 Version:	0.30
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://0pointer.de/lennart/projects/libcanberra/%{name}-%{version}.tar.xz
@@ -112,8 +112,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install -j1 \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/*.la
-rm $RPM_BUILD_ROOT%{_libdir}/libcanberra-%{version}/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/{*,gtk-?.0/modules/*}.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libcanberra-%{version}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -146,7 +146,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcanberra.so
-%{_libdir}/libcanberra.la
 %{_includedir}/canberra.h
 %{_pkgconfigdir}/libcanberra.pc
 %{_datadir}/vala/vapi/libcanberra.vapi
@@ -159,7 +158,6 @@ rm -rf $RPM_BUILD_ROOT
 %files gtk-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcanberra-gtk.so
-%{_libdir}/libcanberra-gtk.la
 %{_includedir}/canberra-gtk.h
 %{_pkgconfigdir}/libcanberra-gtk.pc
 %{_datadir}/vala/vapi/libcanberra-gtk.vapi
@@ -172,7 +170,6 @@ rm -rf $RPM_BUILD_ROOT
 %files gtk3-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcanberra-gtk3.so
-%{_libdir}/libcanberra-gtk3.la
 %{_pkgconfigdir}/libcanberra-gtk3.pc
 
 %files runtime
