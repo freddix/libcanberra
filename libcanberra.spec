@@ -1,7 +1,7 @@
 Summary:	Portable sound event library
 Name:		libcanberra
 Version:	0.30
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://0pointer.de/lennart/projects/libcanberra/%{name}-%{version}.tar.xz
@@ -103,6 +103,7 @@ libcanberra API documentation.
 	--enable-gstreamer	\
 	--enable-null		\
 	--enable-pulse		\
+	--with-builtin=dso	\
 	--with-html-dir=%{_gtkdocdir}
 %{__make} -j1
 
